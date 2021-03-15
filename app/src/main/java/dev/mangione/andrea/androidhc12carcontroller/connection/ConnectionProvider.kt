@@ -10,7 +10,7 @@ import android.hardware.usb.UsbManager
 import java.lang.Exception
 import java.util.logging.Logger
 
-object Connection {
+object ConnectionProvider {
     var status: String = "Disconnected";
     var isConnected: Boolean = false;
     var device: UsbDevice? = null;

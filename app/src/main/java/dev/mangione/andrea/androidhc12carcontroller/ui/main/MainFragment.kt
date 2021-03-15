@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import dev.mangione.andrea.androidhc12carcontroller.R
-import dev.mangione.andrea.androidhc12carcontroller.connection.Connection
+import dev.mangione.andrea.androidhc12carcontroller.connection.ConnectionProvider
 
 
 class MainFragment : Fragment() {
@@ -40,12 +40,12 @@ class MainFragment : Fragment() {
 
     private fun onUsbConnected(t: String) {
         usbHub = t;
-        status?.text = Mark.fromBoolean(t.isNotBlank()).utf;
-        if (t.isNotBlank()) Connection.askForPermission(context!!, ::onPermissionGranted)
+        status?.text = t//Mark.fromBoolean(t.isNotBlank()).utf;
+        if (t.isNotBlank()) ConnectionProvider.askForPermission(context!!, ::onPermissionGranted)
     }
 
     private fun checkAvailability() {
-        Connection.askForConnection(
+        ConnectionProvider.askForConnection(
             context!!,
             ::onUsbConnected
         );

@@ -14,8 +14,8 @@ class Gyroscope(private val context: Context, private val cb: (Point3d) -> Unit)
     init {
         var sensorManager =
             context.applicationContext.getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        val gyroscopeSensor: Sensor? = sensorManager?.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
-        sensorManager?.registerListener(this, gyroscopeSensor, 1000000)
+        val gyroscopeSensor: Sensor? = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
+        sensorManager.registerListener(this, gyroscopeSensor, 1000000)
     }
 
     override fun onSensorChanged(event: SensorEvent?) {

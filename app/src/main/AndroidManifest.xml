@@ -11,6 +11,7 @@
         android:theme="@style/Theme.AndroidHC12CarController">
         <activity android:name=".MainActivity">
             <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
